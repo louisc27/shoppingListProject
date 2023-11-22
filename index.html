@@ -5,20 +5,122 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Shopping list Project</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/c8a2917e09.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style/style.css">
   </head>
   <body>
-    <h1 class="text-center fw-bold">Shopping List Project</h1>
-    <ul>
-      <li>Add items to list via form</li>
-      <li>Remove items from list by clicking X button</li>
-      <li>Clear all items with "clear" button</li>
-      <li>Filter all items by typing in filter field</li>
-      <li>Add localStorage to persist items</li>
-      <li>CLick on an item to put into "edit mode" and add to form</li>
-      <li>Update item</li>
-      <li>Deploy to Netlify</li>
-    </ul>
-    
+    <h1 class="text-center fw-bold m-5 ">Shopping List Project</h1>
+    <div class="container">
+      <div class="row d-flex justify-content-center align-content-center">
+        <div class="col-4">
+          <p class="lead">This project will: </p>
+        </div>
+        <div class="col-8">
+          <ul class="list-unstyled lead text-center">
+            <li>Add items to list via form</li>
+            <li>Remove items from list by clicking X button</li>
+            <li>Clear all items with "clear" button</li>
+            <li>Filter all items by typing in filter field</li>
+            <li>Add localStorage to persist items</li>
+            <li>Click on an item to put into "edit mode" and add to form</li>
+            <li>Update items</li>
+            <li>Deploy to Netlify</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+
+      <header class="text-center">
+        <img src="./style/images/note.png" alt="Shopping list icon">
+        <h1 class="fw-bold lead">Shopping List</h1>
+      </header>
+
+      <div class="container">
+        <div class="row p-3 mt-2 d-flex justify-content-center align-items-center">
+          <div class="col col-sm-12 col-md-6 col-lg-6">
+            
+            <div class="card w-100 mb-3">
+              <div class="card-header text-center">
+                <h5>Add Items to the List</h5>
+              </div>
+              <div class="card-body">
+                
+                <form id="item-form">
+                  <div class="mb-3">
+                    
+                      <input
+                        type="text"
+                        class="form-input form-control"
+                        id="item-input"
+                        name="item"
+                        placeholder="Enter Item"
+                      />
+                    
+                  </div>
+                  
+                    <button type="submit" class="btn mx-auto">
+                      <i class="fa-solid fa-plus"></i> Add Item
+                    </button>
+                  
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <div class="col col-sm-12 col-md-6 col-lg-6 text-center">
+            <div class="card">
+              <div class="card-header">
+                <h5>Filter Items</h5>
+              </div>
+              <div class="card-body">
+                <p class="lead">
+                  <div class="filter">
+                  <input
+                    type="text"
+                    class="form-input-filter form-control"
+                    id="filter"
+                    placeholder="Filter Items"
+                  />
+                </div>
+          
+                <ul id="item-list" class="items">
+                  <li>
+                    Apples
+                    <button class="remove-item btn-link text-red">
+                      <i class="fa-solid fa-xmark"></i>
+                    </button>
+                  </li>
+                  <li>
+                    Orange Juice
+                    <button class="remove-item btn-link text-red">
+                      <i class="fa-solid fa-xmark"></i>
+                    </button>
+                  </li>
+                  <li>
+                    Oreos
+                    <button class="remove-item btn-link text-red">
+                      <i class="fa-solid fa-xmark"></i>
+                    </button>
+                  </li>
+                  <li>
+                    Milk
+                    <button class="remove-item btn-link text-red">
+                      <i class="fa-solid fa-xmark"></i>
+                    </button>
+                  </li>
+                </ul>
+          
+                <button id="clear" class="btn-clear">Clear All</button></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <script src="./js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
   </body>
