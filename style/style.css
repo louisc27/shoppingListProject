@@ -1,13 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&family=Ubuntu+Condensed&display=swap');
 
 
 :root{
-  --white: #dff9fb;
-  --red:#eb4d4b;
-  --grey: #535c68;
+  --white: #d2dae2;
+  --light-red:#ef5777;
+  --red:#f53b57;
+  --grey: #485460;
   --green:#6ab04c;
   --blue: #22a6b3;
   --yellow: #f9ca24;
+  --black: #070e14;
 }
 
 
@@ -20,23 +22,32 @@
 }
 
 body {
-  
+  font-family: 'Poppins', sans-serif;
   font-size: 16px;
   line-height: 1.5;
-  color: #333;
-  background-color: #f5f5f5;
+  color: var(--white);
+  background-color: var(--black);
 }
 
 header {
-  
+  font-family: 'Poppins', sans-serif;
   margin-bottom: 20px;
+  font-weight: 100;
 }
 
 header h1 {
+  font-family: 'Poppins', sans-serif;
   font-weight: 300;
   margin-left: 10px;
+  font-size: 2.5em;
+  line-height: 2.5;
 }
-
+.card{
+  background-color: #222;
+}
+.card-header {
+  color: var(--white);
+}
 
 
 /* Form & Input */
@@ -59,12 +70,28 @@ header h1 {
   border: none;
   border-bottom: 1px solid #ccc;
   background: transparent;
+  color: var(--white) ;
   outline: none;
 }
-
+.form-input-filter:active,
+.form-input-filter:focus{
+  margin-top: 20px;
+  width: 100%;
+  font-size: 18px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  background: var(--grey);
+  color: var(--white) ;
+  outline: none;
+}
+.form-input-filter::placeholder{
+  color: var(--white);
+}
 /* Buttons */
 .btn {
-  background-color: #222;
+  background-color: var(--red);
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -76,7 +103,7 @@ header h1 {
 }
 
 .btn:hover {
-  background-color: #555;
+  background-color: var(--light-red);
   color: #fff;
 }
 
@@ -93,20 +120,21 @@ header h1 {
   margin-top: 20px;
   width: 100%;
   font-size: 16px;
-  background-color: transparent;
-  color: #333;
-  border: 1px solid #ccc;
+  background-color:var(--red);
+  color: var(--white);
+  border: none;
   border-radius: 5px;
   padding: 10px 20px;
   cursor: pointer;
 }
 
 .btn-clear:hover {
-  background-color: #f1f1f1;
+  background-color: var(--light-red);
+  color: var(--white);
 }
 
 .text-red {
-  color: var(--red);
+  color: var(--white);
 }
 
 /* Items */
@@ -119,17 +147,23 @@ header h1 {
 
 .items li {
   display: flex;
+  background-color: var(--light-red);
+  border: 2px solid var(--red);
+  color: var(--white);
   justify-content: space-between;
   width: 45%;
-  border: 1px solid #ccc;
+  
   border-radius: 5px;
   padding: 10px 15px;
   margin: 0 5px 20px;
   font-weight: 700;
 }
 
-@media (max-width: 500px) {
+@media (min-width: 500px) {
+  ul.items{
+    padding-left: 0 !important;
+  }
   .items li {
-    width: 100%;
+    min-width: 100% !important;
   }
 }

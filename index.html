@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="./style/style.css">
   </head>
   <body>
-    <h1 class="text-center fw-bold m-5 ">Shopping List Project</h1>
-    <div class="container">
+    
+    <!-- <div class="container">
       <div class="row d-flex justify-content-center align-content-center">
         <div class="col-4">
           <p class="lead">This project will: </p>
@@ -28,18 +28,18 @@
           </ul>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <div class="container-fluid">
 
-      <header class="text-center">
+      <header class="text-start d-flex align-items-center" >
         <img src="./style/images/note.png" alt="Shopping list icon">
-        <h1 class="fw-bold lead">Shopping List</h1>
+        <h1 >Shopping List</h1>
       </header>
 
       <div class="container">
-        <div class="row p-3 mt-2 d-flex justify-content-center align-items-center">
-          <div class="col col-sm-12 col-md-6 col-lg-6">
+        <div class="row p-3 mt-2 d-flex justify-content-center align-items-start">
+          <div class="col-12 col-sm-12 col-md-6 col-lg-6 align-items-start">
             
             <div class="card w-100 mb-3">
               <div class="card-header text-center">
@@ -61,7 +61,7 @@
                   </div>
                   
                     <button type="submit" class="btn mx-auto">
-                      <i class="fa-solid fa-plus"></i> Add Item
+                      <i class="fa-solid fa-plus p-2"></i> Add Item
                     </button>
                   
                 </form>
@@ -85,7 +85,7 @@
                   />
                 </div>
           
-                <ul id="item-list" class="items">
+                <ul id="item-list" class="items d-sm-flex justify-content-center align-content-center flex-sm-column ">
                   <li>
                     Apples
                     <button class="remove-item btn-link text-red">
