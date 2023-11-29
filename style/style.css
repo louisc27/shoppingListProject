@@ -33,6 +33,7 @@ header {
   font-family: 'Poppins', sans-serif;
   margin-bottom: 20px;
   font-weight: 100;
+  border-bottom: 2px solid var(--white);
 }
 
 header h1 {
@@ -45,14 +46,21 @@ header h1 {
 .card{
   background-color: #222;
 }
+.card#filter-card{
+  background-color: transparent;
+}
 .card-header {
   color: var(--white);
+  text-transform: uppercase;
+  font-family: 'Poppins', sans-serif;
+ border-bottom: 1px solid var(--white);
+ 
 }
 
 
 /* Form & Input */
 .form-input {
-  width: 100%;
+  width: 300px;
   font-size: 18px;
   margin-bottom: 20px;
   padding: 10px;
@@ -157,6 +165,13 @@ header h1 {
   padding: 10px 15px;
   margin: 0 5px 20px;
   font-weight: 700;
+  transition: 0.2s;
+}
+.items li:hover{
+  background-color: var(--red);
+  text-transform: uppercase;
+  transition: 0.2s;
+  cursor: pointer;
 }
 
 @media (min-width: 500px) {
