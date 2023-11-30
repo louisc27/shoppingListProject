@@ -2,13 +2,16 @@
 
 
 :root{
-  --white: #d2dae2;
+  --white: #dff9fb;
   --light-red:#ef5777;
   --red:#f53b57;
-  --grey: #485460;
+  --light-grey: #95afc0;
+  --grey: #535c68;
   --green:#6ab04c;
+  --alt-green:#badc58;
   --blue: #22a6b3;
   --yellow: #f9ca24;
+  --peach: #ffbe76;
   --black: #070e14;
 }
 
@@ -26,34 +29,43 @@ body {
   font-size: 16px;
   line-height: 1.5;
   color: var(--white);
-  background-color: var(--black);
+  background-color: var(--light-grey);
 }
 
 header {
   font-family: 'Poppins', sans-serif;
+  
   margin-bottom: 20px;
   font-weight: 100;
   border-bottom: 2px solid var(--white);
 }
-
+nav{
+  background-color: var(--white);
+}
+.nav-item{
+  color: var(--grey);
+}
 header h1 {
   font-family: 'Poppins', sans-serif;
   font-weight: 300;
   margin-left: 10px;
   font-size: 2.5em;
   line-height: 2.5;
+  color: var(--grey);
 }
 .card{
-  background-color: #222;
+  background-color: var(--white);
+  border: 1px solid var(--light-grey)
 }
 .card#filter-card{
   background-color: transparent;
+  border: none;
 }
 .card-header {
-  color: var(--white);
+  color: var(--grey);
   text-transform: uppercase;
   font-family: 'Poppins', sans-serif;
- border-bottom: 1px solid var(--white);
+ border-bottom: 1px solid var(--grey);
  
 }
 
@@ -99,7 +111,7 @@ header h1 {
 }
 /* Buttons */
 .btn {
-  background-color: var(--red);
+  background-color: var(--light-grey);
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -111,7 +123,7 @@ header h1 {
 }
 
 .btn:hover {
-  background-color: var(--light-red);
+  background-color: var(--grey);
   color: #fff;
 }
 
@@ -128,7 +140,7 @@ header h1 {
   margin-top: 20px;
   width: 100%;
   font-size: 16px;
-  background-color:var(--red);
+  background-color:var(--light-grey);
   color: var(--white);
   border: none;
   border-radius: 5px;
@@ -155,12 +167,12 @@ header h1 {
 
 .items li {
   display: flex;
-  background-color: var(--light-red);
-  border: 2px solid var(--red);
+  background-color: var(--green);
+  border: 2px solid var(--white);
   color: var(--white);
   justify-content: space-between;
   width: 45%;
-  
+  text-transform: uppercase;
   border-radius: 5px;
   padding: 10px 15px;
   margin: 0 5px 20px;
@@ -168,7 +180,7 @@ header h1 {
   transition: 0.2s;
 }
 .items li:hover{
-  background-color: var(--red);
+  background-color: var(--alt-green);
   text-transform: uppercase;
   transition: 0.2s;
   cursor: pointer;

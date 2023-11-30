@@ -7,7 +7,7 @@ const itemFilter = document.getElementById('filter')
 
 
 // Function to add items to list
-function addItem(e) {
+function onAddItemSubmit(e) {
   e.preventDefault();
 
   const newItem = itemInput.value;
@@ -17,23 +17,30 @@ function addItem(e) {
     alert('List is empty');
     return;
   }
-
-
-  //Create list items
- const li = document.createElement('li');
- // Place text in list item
- li.appendChild(document.createTextNode(newItem));
-
+// create item dom element
+addItemToDOM(newItem);
  
- const button = createButton('remove-item btn-link text-red');
- li.appendChild(button);
-// Add li to the DOM
- itemList.appendChild(li);
+//add item to local storage
+addItemToStorage(newItem);
 
  checkUI();
 
  itemInput.value = '';
 }
+
+function addItemToDOM(item){
+  const li = document.createElement('li');
+  
+  li.appendChild(document.createTextNode(item));
+ 
+  
+  const button = createButton('remove-item btn-link text-red');
+  li.appendChild(button);
+ 
+  itemList.appendChild(li);
+}
+
+
 
 // Function to create buttons
 function createButton(classes){
@@ -52,6 +59,19 @@ function createIcon(classes){
   return icon;
 }
 
+function getItemsFromStorage(){
+  let itemsFromStorage;
+// Check storage for variables
+  if(localStorage.getItem('items') === null){
+    //if there are none set to an empty array
+    itemsFromStorage = [];
+  } else {
+    //if there are items in storage parse into an array
+    itemsFromStorage = JSON.parse(localStorage.getItem('items'));
+  }
+  return item
+}
+
 function removeItem(e){
   //if the targeted events parent element contains the class of remove-item
   if (e.target.parentElement.classList.contains('remove-item')){
@@ -64,11 +84,39 @@ function removeItem(e){
   }
 }
 
+function addItemToStorage(item){
+  //initialize variable
+
+  const itemsFromStorage = getItemsFromStorage();
+
+// add new item to array
+  itemsFromStorage.push(item);
+
+  // Convert To JSON string and set to local storage
+  localStorage.setItem('items', JSON.stringify(itemsFromStorage));
+}
+
 function clearItem(){
   while(itemList.firstChild){
     itemList.removeChild(itemList.firstChild);
   }
   checkUI();
+}
+
+function filterItems(e){
+  const items = itemList.querySelectorAll('li');
+  const text = e.target.value.toLowerCase();
+
+  items.forEach(item => {
+    const itemName = item.firstChild.textContent.toLocaleLowerCase();
+
+    if(itemName.indexOf(text) != -1){
+      
+      item.style.display = 'flex';
+    } else {
+      item.style.display = 'none';
+    }
+  });
 }
 
 function checkUI(){
@@ -85,8 +133,21 @@ function checkUI(){
 
 
 //Event Listeners
-itemForm.addEventListener('submit', addItem);
+itemForm.addEventListener('submit', onAddItemSubmit);
 itemList.addEventListener('click', removeItem);
 clearBtn.addEventListener('click', clearItem);
+itemFilter.addEventListener('input', filterItems);
 
 checkUI();
+
+/*
+localStorage Methods
+
+localStorage.setItem('name','Robert');   Set value with a key
+localStorage.getItem('name');            Get value using the key
+localStorage.removeItem('name');         Remove item using the key
+localStorage.clear();                    Clear all values
+
+check localStorage in console by visiting the application tab
+
+*/ 
