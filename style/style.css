@@ -102,7 +102,7 @@ header h1 {
   padding: 10px;
   border: 2px solid #ccc;
   border-bottom: 1px solid #ccc;
-  background: var(--grey);
+  background: transparent;
   color: var(--white) ;
   outline: none;
 }
